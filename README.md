@@ -1,8 +1,8 @@
 # s3-sync-lambda
 
-![types](https://img.shields.io/badge/types-mypy-brightgreen?style=flat-square)
-
 Sync an S3 bucket to another S3 bucket in AWS Lambda.
+
+This is a very light wrapper around the Python AWS CLI.
 
 
 ## Acknowledgements
