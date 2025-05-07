@@ -61,11 +61,11 @@ jobs:
 
     - uses: ./.github/workflows/common
 
-    - name: Build the package
-      run: poetry build
+    - name: Build the lambda function
+      run: ./dev.py build
 
     - name: Upload distributable
       uses: actions/upload-artifact@v4
       with:
-        name: dist-artifacts
-        path: dist/
+        name: lambda
+        path: lambdas/s3-sync-lambda.zip
