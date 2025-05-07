@@ -29,7 +29,7 @@ def install():
 
 @cli.command()
 def check_types():
-    execute("mypy", "--package", "missouri", "--show-error-codes")
+    execute("mypy", "--package", "s3_sync_lambda", "--show-error-codes")
 
 
 @cli.command()
