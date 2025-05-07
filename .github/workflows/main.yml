@@ -69,7 +69,3 @@ jobs:
       with:
         name: dist-artifacts
         path: dist/
-
-    - name: Build the docs
-      if: always()
-      run: ./dev.py doc
