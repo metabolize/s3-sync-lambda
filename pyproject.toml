@@ -18,7 +18,7 @@ classifiers = [
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.10"
-awscli = "1.22.49"
+awscli = "1.40.9"
 executor = "23.2"
 
 [tool.poetry.dev-dependencies]
