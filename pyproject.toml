@@ -29,6 +29,7 @@ flake8-import-order = "0.18.2"
 mypy = "1.15.0"
 # pyyaml is broken with cython 3. https://github.com/yaml/pyyaml/issues/724
 pyyaml = "!=6.0.0,!=5.4.0,!=5.4.1"
+werkit = "0.35.1"
 
 [build-system]
 # Lint requires setuptools.
