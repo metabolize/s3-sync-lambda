@@ -1,5 +1,15 @@
 import os
 import pytest
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
+SOURCE_BUCKET = "metabolize-s3-sync-test-src"
+SOURCE_REGION = "us-east-1"
+TARGET_BUCKET = "metabolize-s3-sync-test-dst"
+TARGET_REGION = "us-west-1"
+
 
 LAMBDA_ZIP_PATH = "lambdas/s3-sync-lambda.zip"
 HANDLER = "s3_sync_lambda.handler.handler"
@@ -25,7 +35,7 @@ def deployed_function(
     import boto3
     from werkit.aws_lambda.deploy import perform_create
 
-    client = boto3.client("lambda")
+    client = boto3.client("lambda", region_name=AWS_REGION)
     function_name = f"{FUNCTION_PREFIX}_test_{unique()}"
 
     def cleanup() -> None:
@@ -43,6 +53,12 @@ def deployed_function(
         memory_size=MEMORY_SIZE,
         # s3_code_bucket=S3_CODE_BUCKET,
         verbose=True,
+        env_vars={
+            "SOURCE_BUCKET": SOURCE_BUCKET,
+            "SOURCE_REGION": SOURCE_REGION,
+            "TARGET_BUCKET": TARGET_BUCKET,
+            "TARGET_REGION": TARGET_REGION,
+        },
     )
 
     request.addfinalizer(cleanup)
