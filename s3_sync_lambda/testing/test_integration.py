@@ -5,7 +5,6 @@ from .testing_helpers import AWS_REGION, unique
 from .testing_helpers import SOURCE_BUCKET, TARGET_BUCKET
 
 
-
 def is_key_in_bucket(s3_client: S3Client, bucket: str, key: str) -> bool:
     try:
         s3_client.head_object(Bucket=bucket, Key=key)
