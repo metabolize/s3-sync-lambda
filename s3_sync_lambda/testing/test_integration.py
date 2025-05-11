@@ -43,6 +43,6 @@ def test_integration(deployed_function: str) -> None:
         print("payload", payload)
         import pdb; pdb.set_trace()
         print(payload["errorMessage"])
-        print(payload["stackTrace"].join(""))
+        print("".join(payload["stackTrace"]))
 
     assert is_key_in_bucket(s3_client=s3_client, bucket=TARGET_BUCKET, key=key)
