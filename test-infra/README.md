@@ -34,8 +34,8 @@ This is a rare exception to normal best practices:
 
 ```sh
 cd test-infra
-terragrunt init
-terragrunt apply
+tofu init
+tofu apply
 ```
 
 

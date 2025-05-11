@@ -168,6 +168,5 @@ lambdas/
 crash.log
 *.tfplan
 *.tfstate.backup
-*/.terragrunt-cache/
 
 # Note: We are intentionally checking in terraform.tfstate
