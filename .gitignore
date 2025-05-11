@@ -169,5 +169,6 @@ lambdas/
 crash.log
 *.tfplan
 *.tfstate.backup
+*.tfstate.lock.info
 
 # Note: We are intentionally checking in terraform.tfstate
