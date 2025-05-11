@@ -21,6 +21,14 @@ The Lambda should be configured with the following environment variables:
 * `TARGET_BUCKET`
 * `TARGET_REGION`
 
+
+## Releasing
+
+To perform a release, open a pull request with the name e.g. **RELEASE 1.0.1**,
+which updates the version number in `pyproject.toml` and adds a changelog entry.
+After it's merged to main, run the **Manual release** GitHub action.
+
+
 ## Acknowledgements
 
 This Lambda function was initially developed by Jacob Beard.
