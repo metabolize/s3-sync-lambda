@@ -161,3 +161,13 @@ pip-selfcheck.json
 
 lambdas/
 
+# Ignore lock file (used during terraform apply/plan)
+*.lock.hcl
+
+# Ignore crash logs, TF logs
+crash.log
+*.tfplan
+*.tfstate.backup
+*/.terragrunt-cache/
+
+# Note: We are intentionally checking in terraform.tfstate
