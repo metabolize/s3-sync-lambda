@@ -100,6 +100,11 @@ def black_check():
 
 
 @cli.command()
+def test():
+    execute("pytest")
+
+
+@cli.command()
 def build():
     perform_build()
 

@@ -1,0 +1,29 @@
+name: Test infra lint & format check
+
+on:
+  pull_request:
+    paths:
+      - '**.tf'
+      - '**.hcl'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up OpenTofu
+        uses: opentofu/setup-opentofu@v1
+        with:
+          tofu_version: 'latest'
+
+      - name: Set up TFLint
+        run: |
+          curl -s https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+
+      - name: Check formatting
+        run: tofu fmt -check -recursive
+
+      - name: Lint with tflint
+        run: tflint --recursive

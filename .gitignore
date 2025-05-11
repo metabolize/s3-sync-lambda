@@ -160,4 +160,15 @@ pip-selfcheck.json
 # End of https://www.gitignore.io/api/osx,python
 
 lambdas/
+.terraform/
 
+# Ignore lock file (used during terraform apply/plan)
+*.lock.hcl
+
+# Ignore crash logs, TF logs
+crash.log
+*.tfplan
+*.tfstate.backup
+*.tfstate.lock.info
+
+# Note: We are intentionally checking in terraform.tfstate
