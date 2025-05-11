@@ -37,10 +37,11 @@ def test_integration(deployed_function: str) -> None:
         InvocationType="RequestResponse",
     )
     print("lambda response", response)
-    if response["FunctionError"] == "Unhandled":
+    if "FunctionError" in response:
         payload = json.loads(response["Payload"].read().decode("utf-8"))
         print("payload", payload)
         print(payload["errorMessage"])
         print("".join(payload["stackTrace"]))
+        raise Exception("Lambda function failed")
 
     assert is_key_in_bucket(s3_client=s3_client, bucket=TARGET_BUCKET, key=key)
