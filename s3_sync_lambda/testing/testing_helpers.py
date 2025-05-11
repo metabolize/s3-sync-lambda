@@ -1,7 +1,7 @@
 import os
-import pytest
 from dotenv import load_dotenv
 from mypy_boto3_s3.literals import RegionName
+import pytest
 
 
 load_dotenv()
