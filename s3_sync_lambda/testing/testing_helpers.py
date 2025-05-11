@@ -19,7 +19,6 @@ MEMORY_SIZE = 3008
 AWS_REGION: RegionName = "us-east-1"
 ROLE = os.environ["LAMBDA_ROLE"]
 TIMEOUT = 60
-# S3_CODE_BUCKET = os.environ.get("UPLOAD_BUCKET", None)
 
 
 def unique() -> str:
@@ -52,7 +51,6 @@ def deployed_function(
         role=ROLE,
         timeout=TIMEOUT,
         memory_size=MEMORY_SIZE,
-        # s3_code_bucket=S3_CODE_BUCKET,
         verbose=True,
         env_vars={
             "SOURCE_BUCKET": SOURCE_BUCKET,
