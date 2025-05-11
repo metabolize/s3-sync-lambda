@@ -1,6 +1,7 @@
 import os
 import pytest
 from dotenv import load_dotenv
+from mypy_boto3_s3.literals import RegionName
 
 
 load_dotenv()
@@ -15,7 +16,7 @@ LAMBDA_ZIP_PATH = "lambdas/s3-sync-lambda.zip"
 HANDLER = "s3_sync_lambda.handler.handler"
 FUNCTION_PREFIX = "s3-sync-lambda"
 MEMORY_SIZE = 3008
-AWS_REGION = "us-east-1"
+AWS_REGION: RegionName = "us-east-1"
 ROLE = os.environ["LAMBDA_ROLE"]
 TIMEOUT = 60
 # S3_CODE_BUCKET = os.environ.get("UPLOAD_BUCKET", None)
