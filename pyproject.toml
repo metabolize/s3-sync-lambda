@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "s3-sync-lambda"
-version = "0.1.0a0"
+version = "1.0.0a0"
 description = "Sync an S3 bucket to another S3 bucket in AWS Lambda."
 authors = ["Metabolize LLC"]
 license = "Apache-2.0"
