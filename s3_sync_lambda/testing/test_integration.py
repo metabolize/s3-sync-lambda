@@ -41,7 +41,6 @@ def test_integration(deployed_function: str) -> None:
     if response["FunctionError"] == "Unhandled":
         payload = json.loads(response["Payload"].read().decode("utf-8"))
         print("payload", payload)
-        import pdb; pdb.set_trace()
         print(payload["errorMessage"])
         print("".join(payload["stackTrace"]))
 
