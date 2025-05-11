@@ -4,7 +4,7 @@ on: workflow_dispatch
 
 jobs:
   release:
-    name: Build and upload
+    name: Manual release
     runs-on: ubuntu-latest
 
     steps:
@@ -26,8 +26,7 @@ jobs:
         run: |
           gh release create v${{ steps.get_version.outputs.version }} \
             lambdas/s3-sync-lambda.zip \
-            --title "Release v${{ steps.get_version.outputs.version }}" \
-            --notes "Automated release via GitHub Actions"
+            --title "v${{ steps.get_version.outputs.version }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

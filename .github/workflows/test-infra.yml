@@ -1,4 +1,4 @@
-name: Test infra lint & format check
+name: Test infrastructure
 
 on:
   pull_request:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   lint:
+    name: Lint & format check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
