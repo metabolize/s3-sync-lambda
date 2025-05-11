@@ -1,6 +1,6 @@
 Changelog
 =========
 
-## 0.1.0
+## 1.0.0a0
 
-Initial public release
+Initial alpha release
