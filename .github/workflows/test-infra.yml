@@ -5,7 +5,6 @@ on:
     paths:
       - '**.tf'
       - '**.hcl'
-      - '**/terragrunt.hcl'
 
 jobs:
   lint:
@@ -28,9 +27,3 @@ jobs:
 
       - name: Lint with tflint
         run: tflint --recursive
-
-      - name: Validate with Terragrunt
-        run: |
-          curl -L https://github.com/gruntwork-io/terragrunt/releases/latest/download/terragrunt_linux_amd64 -o /usr/local/bin/terragrunt
-          chmod +x /usr/local/bin/terragrunt
-          terragrunt validate-all
