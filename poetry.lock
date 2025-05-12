@@ -952,6 +952,21 @@ optional = false
 python-versions = ">=3.7"
 
 [[package]]
+name = "semverize"
+version = "0.1.0"
+description = "Coerce PEP 440 to SemVer, when possible"
+category = "dev"
+optional = false
+python-versions = "<4,>=3.9"
+
+[package.dependencies]
+packaging = ">=23.0"
+semver = ">=3,<4"
+
+[package.extras]
+cli = ["click (>=8,<9)"]
+
+[[package]]
 name = "setuptools"
 version = "80.4.0"
 description = "Easily download, build, install, upgrade, and uninstall Python packages"
@@ -1062,7 +1077,7 @@ rds-graphile-worker = ["rds-graphile-worker-client (>=0.1.1,<0.2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9,<3.10"
-content-hash = "ec82af712c5d8f30e475d57a136f7301cf50b8bfb9477f7de3e7366acd79cd08"
+content-hash = "71d8ba11b8968882fe76491d6d773cc9ce33b0e82b05ced7768ddd604e2c4850"
 
 [metadata.files]
 attrs = [
@@ -1480,6 +1495,10 @@ s3transfer = [
 semver = [
     {file = "semver-3.0.1-py3-none-any.whl", hash = "sha256:2a23844ba1647362c7490fe3995a86e097bb590d16f0f32dfc383008f19e4cdf"},
     {file = "semver-3.0.1.tar.gz", hash = "sha256:9ec78c5447883c67b97f98c3b6212796708191d22e4ad30f4570f840171cbce1"},
+]
+semverize = [
+    {file = "semverize-0.1.0-py3-none-any.whl", hash = "sha256:6ff6c7962d943726eb10b6425b9c46e4449f8ac291616d0f3e45be5b47f50472"},
+    {file = "semverize-0.1.0.tar.gz", hash = "sha256:480d4bfdbeac5c34cfd02b8ecc6b3253e97f346f6c030904e0ba9b7bbb01d7e9"},
 ]
 setuptools = [
     {file = "setuptools-80.4.0-py3-none-any.whl", hash = "sha256:6cdc8cb9a7d590b237dbe4493614a9b75d0559b888047c1f67d49ba50fc3edb2"},
