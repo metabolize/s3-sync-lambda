@@ -22,6 +22,12 @@ The Lambda should be configured with the following environment variables:
 * `TARGET_REGION`
 
 
+## Versioning
+
+This package uses PEP 440 internally which is converted to SemVer at publish
+time for wider tool compatibility.
+
+
 ## Releasing
 
 To perform a release, open a pull request with the name e.g. **RELEASE 1.0.1**,
