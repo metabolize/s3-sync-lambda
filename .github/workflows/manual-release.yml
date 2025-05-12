@@ -19,14 +19,17 @@ jobs:
       - name: Extract version from pyproject.toml
         id: get_version
         run: |
+          set -euo pipefail
           version=$(grep '^version' pyproject.toml | head -n 1 | cut -d '"' -f2)
           echo "version=$version" >> $GITHUB_OUTPUT
+          semverized=semverize $version
+          echo "semverized=$semverized" >> $GITHUB_OUTPUT
 
       - name: Create GitHub release
         run: |
-          gh release create v${{ steps.get_version.outputs.version }} \
+          gh release create v${{ steps.get_version.outputs.semverized }} \
             lambdas/s3-sync-lambda.zip \
-            --title "v${{ steps.get_version.outputs.version }}"
+            --title "v${{ steps.get_version.outputs.semverized }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
