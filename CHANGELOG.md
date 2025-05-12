@@ -1,6 +1,11 @@
 Changelog
 =========
 
+## 1.0.0
+
+Initial public release
+
+
 ## 1.0.0a1
 
 Upgrade awscli to 1.40.12.
