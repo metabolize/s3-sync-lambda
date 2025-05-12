@@ -22,7 +22,7 @@ jobs:
           set -euo pipefail
           version=$(grep '^version' pyproject.toml | head -n 1 | cut -d '"' -f2)
           echo "version=$version" >> $GITHUB_OUTPUT
-          semverized=semverize $version
+          semverized=$(poetry run semverize $version)
           echo "semverized=$semverized" >> $GITHUB_OUTPUT
 
       - name: Create GitHub release
